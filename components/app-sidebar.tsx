@@ -48,7 +48,7 @@ const items = [
   },
   {
     title: "Lines",
-    url: "#",
+    url: "/line",
     icon: LayoutPanelTop,
   },
   {
