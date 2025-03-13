@@ -14,19 +14,6 @@
   .sidebar.expand{
     width: 250px; /* Expand width */
   }
-
-/*   .sidebar-toggle-button{
-    position: absolute;
-    top: 15px;
-    left: 100%; 
-    transform: translateX(-50%); 
-    background-color: #2E4281;
-    color: #ffffff;
-    padding: 6px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: left 0.3s ease-in-out;
-  } */
   
   .sidebar-container {
     width: 100%;
@@ -63,6 +50,12 @@
      /* margin: 0 !important; */
      transition: background-color 0.3s ease, transform 0.2s ease; 
   }
+
+ /*  .menuItemLink:last-child .iconWrapper{
+    background-color: yellow;
+    border-bottom: 1px solid #2E4281;
+    margin-bottom: 5px;
+  } */
 
   .menuItemLink:hover{
     background-color: transparent !important;
@@ -113,17 +106,18 @@
   }
   
   .iconPlaceholder {
+    background-color: yellow;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center !important;
+    justify-content: center !important;
     width: 30px;
     height: 30px;
     background-color: transparent !important;
   }
   
   .icon {
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
     object-fit: contain;
     transition: color 0.3s ease, transform 0.2s ease;
   }
@@ -141,5 +135,10 @@
     transition: color 0.3s ease, transform 0.2s ease;
     user-select: none;
   }
+/*   .menuItemText:last-child{
+    
+    border-bottom: 1px solid #2E4281;
+    margin-bottom: 5px;
+  } */
 
  

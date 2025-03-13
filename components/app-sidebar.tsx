@@ -1,15 +1,18 @@
 "use client"
 
 import React, {useState} from 'react';
+import Link from 'next/link'
 import { Calendar, Home, Package, LayoutPanelTop, ClipboardCheck, Eye, Flag, Settings } from "lucide-react";
-import LinesIcon from "@/app/icons/LinesIcon.svg";
-import SettingIcon from '@/app/icons/SettingIcon.svg'; 
+import './styles/AppSidebar.css';
 import Logo from '@/app/icons/Logo.svg';
 import ProfileIcon from '@/app/icons/ProfileIcon.svg';
-import AuditIcon from '@/app/icons/Auditcon.svg';
-import StatusIcon from '@/app/icons/StatusIcon.svg';
-import HomeIcon from '@/app/icons/HomeIcon.svg';
-import './styles/AppSidebar.css';
+import audit_trail_24px from "@/app/icons/audit_trail_24px.svg";
+import flag_24px from "@/app/icons/flag_24px.svg";
+import home_24px from "@/app/icons/home_24px.svg";
+import material_handling_24px from "@/app/icons/material_handling_24px.svg";
+import setting from "@/app/icons/setting.svg";
+
+
 
 import {
   Sidebar,
@@ -43,42 +46,37 @@ const profileImg = [
 const items = [   
   {
     title: "Home",
-    url: "#",
-    icon: Home,
+    url: "/",
+    icon: home_24px,
   },
   {
     title: "Lines",
     url: "/line",
-    icon: LayoutPanelTop,
+    icon: material_handling_24px,
   },
   {
     title: "Audit",
     url: "#",
-    icon: ClipboardCheck,
+    icon: audit_trail_24px,
   },
   {
     title: "Status",
     url: "#",
-    icon: Flag,
+    icon: flag_24px,
   },
   {
     title: "Settings",
     url: "#",
-    icon: Settings,
+    icon: setting,
   },
 ];
 
 export function AppSidebar() {
 
-    const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <Sidebar  className= {'sidebar ${isExpanded ? "expanded" : "collapsed"}'}>
      <div className='sidebar-container'>
-        {/* Sidebar Toggle Button */}
-        <button className='sidebar-toggle-button' onClick={() => setIsExpanded(!isExpanded)}>
-            {isExpanded ? <span>&larr;</span> : <span>&rarr</span>}
-        </button>
          {/* Render logo at the top */}
       <div  className="logoWrapper">
         {logo.map((item) => (
@@ -106,12 +104,16 @@ export function AppSidebar() {
               {items.map((item) => (
                 <SidebarMenuItem  key={item.title}>
                   <SidebarMenuButton  asChild className='sidebar-toggle-button'>
-                    <a href={item.url} className="menuItemLink">
+                    <Link href={item.url} legacyBehavior>
+                    <a  className="menuItemLink">
                       <div  className="iconPlaceholder">
-                         <item.icon className="icon" size={15} color='white' strokeWidth={0.5} /> 
+                         {/* <item.icon className="icon" size={15} color='white' strokeWidth={0.5} />  */}
+                         {/* <img src={item.icon} className='icon' alt={item.title}/> */}
+                         <item.icon className= 'icon' alt= {item.title}/>
                       </div>
                       <span  className="menuItemText">{item.title}</span>
                     </a>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
