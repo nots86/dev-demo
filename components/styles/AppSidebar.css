@@ -1,0 +1,145 @@
+.sidebar {
+    background-color: #001965;
+    padding: 16px; /* Adjust this value as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px; /* Collapsed width */
+    height: 100vh; /* Ensure the sidebar takes up the full height of the viewport */
+    position: relative; /* Ensure the button moves with the sidebar */
+    transition: width 0.3s ease-in-out;
+    overflow: hidden;
+  }
+
+  .sidebar.expand{
+    width: 250px; /* Expand width */
+  }
+
+/*   .sidebar-toggle-button{
+    position: absolute;
+    top: 15px;
+    left: 100%; 
+    transform: translateX(-50%); 
+    background-color: #2E4281;
+    color: #ffffff;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: left 0.3s ease-in-out;
+  } */
+  
+  .sidebar-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 20px !important;
+    /* padding: 5px 0 !important; */
+    height: 100%; /* Ensure the container takes up the full height of the sidebar */
+  }
+
+  .sidebar-menu{
+    margin-top: 0px !important;
+    padding-top: 0px !important;
+    align-self: flex-start;
+    width: 100%;
+  }
+
+  
+  /* Default styling for menu items */
+  .menuItemLink {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-decoration: none; /* Add this to remove underline */
+    margin-bottom: 30px;  /* Space between menu items */
+    width: 100%; /* Ensure it takes full width of the container */
+     gap: 1px !important; /* Space between icon & taxt*/
+     overflow: visible !important; 
+     border-radius: 6px;
+     padding: 8px 0 !important;
+     margin-bottom: 25px !important;
+     /* margin: 0 !important; */
+     transition: background-color 0.3s ease, transform 0.2s ease; 
+  }
+
+  .menuItemLink:hover{
+    background-color: transparent !important;
+  }
+
+  .menuItemLink:hover .menuItemText{
+    color: white !important;
+  }
+
+  .menuItemLink:hover .iconPlaceholder{
+    background-color: #2E4281 !important; /* Custom hover color */
+    border-radius: 6px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .logoWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px; /* Adjust the value to give space below the logo */
+    /* margin-top: auto; */
+   /*  margin-top: 0 !important; */
+    height: 20px;
+    /* height: auto !important; */
+  }
+  
+  .logo {
+    height: 40px;
+    width: 40px;
+  }
+
+  .profile-img-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 60px;
+    /* height: auto !important; */
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important; /* Ensure no extra spacing */
+  }
+  
+  .profile-img {
+    height: 40px;
+    width: 40px;
+    object-fit: contain;
+    display: block;
+  }
+  
+  .iconPlaceholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: transparent !important;
+  }
+  
+  .icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    transition: color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .menuItemText {
+    color: #ffffff !important; 
+    text-align: center; /* Center align the text */
+    font-size: 12px !important; /* Adjust font size if needed */
+    margin-top: 4px;
+    display: block !important;
+    visibility: visible !important;
+    height: auto !important;
+    min-height: 16px; 
+    line-height: 1.2; /* Keep spacing below icon*/
+    transition: color 0.3s ease, transform 0.2s ease;
+    user-select: none;
+  }
+
+ 
