@@ -25,6 +25,26 @@ export default function Lines() {
     });
   };
 
+  // Handle form submit
+  const handleSubmit = async (e: ChangeEvent<HTMLInputElement  | HTMLSelectElement>) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('/api/lines', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      if (response.ok) {
+        alert('Line information saved successfully.');
+      } else {
+        alert('Error saving line information.');
+      }
+    } catch (error) {
+      alert('Error saving line information.');
+    }
+  };
   return (
     <div  className="content">
       {/* Page Header */}
@@ -45,13 +65,17 @@ export default function Lines() {
 
       {/* Container 1 */}
       <div  className="container">
-        <h2>Line Information</h2>
-        <form>
+        <h2>Header Line Information</h2>
+        <form  onSubmit={handleSubmit}>
           <div  className="form-group">
             <label  htmlFor="country">Country</label>
             <select  id="country" name="country" value={formData.country} onChange={handleInputChange}>
               <option  value="">Choose from countries</option>
-              {/* Add country options here */}
+              <option  value="us">🇺🇸 United States</option>
+              <option  value="uk">🇬🇧 United Kingdom</option>
+              <option  value="ca">🇨🇦 Canada</option>
+              <option  value="de">🇩🇪 Germany</option>
+              <option  value="jp">🇯🇵 Japan</option>
             </select>
           </div>
           <div  className="form-group">
@@ -71,6 +95,44 @@ export default function Lines() {
           </div>
         </form>
       </div>
+
+      {/* Container 2 */}
+      <div  className="container">
+        <h2>Local Host Information</h2>
+        <div  className="form-group">
+          <label  htmlFor="hostName">Host Name</label>
+          <input type="text" id="hostName" name="hostName" value={formData.hostName} onChange={handleInputChange} placeholder="Enter host name" />
+        </div>
+        <div  className="form-group">
+          <label  htmlFor="hardware">Hardware</label>
+          <div  className="subheader">Hardware of the local machine host</div>
+          <input type="text" id="hardware" name="hardware" value={formData.hardware} onChange={handleInputChange} placeholder="-select-" />
+        </div>
+      </div>
+
+      {/* Container 3 */}
+      <div  className="container">
+        <h2>AD Groups</h2>
+        <div  className="form-group">
+          <label  htmlFor="dataAccessAdGroup">Data Access AD Group</label>
+          <div  className="subheader">Subheader text</div>
+          <div  className="input-icon">
+            <input type="text" id="dataAccessAdGroup" name="dataAccessAdGroup" value={formData.dataAccessAdGroup} onChange={handleInputChange} />
+            <span>Search icon</span>
+          </div>
+        </div>
+        <div  className="form-group">
+          <label  htmlFor="localSystemManagerAdGroup">Local System Manager AD Group</label>
+          <div  className="subheader">Subheader text</div>
+          <div  className="input-icon">
+            <input type="text" id="localSystemManagerAdGroup" name="localSystemManagerAdGroup" value={formData.localSystemManagerAdGroup} onChange={handleInputChange} />
+            <span>Search icon</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Continue Button */}
+      <button  type="submit" className="continue-btn">Continue</button>
     </div>
   );
 }

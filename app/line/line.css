@@ -9,19 +9,24 @@
   .content-wrapper {
     display: flex;
     flex-grow: 1;
-    background-color: yellow;
+    /* height: 100vh; */
+    padding: 0 40px 20px 0;
+    margin-right: 25px;
+    overflow-x: auto;
+    overflow-y: auto;
   }
   
   /* SIDEBAR */
   .sidebar-right {
     background-color: #001965;
-    width: 220px;
-    height: 100vh;
+    width: 180px; 
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 10px;
     position: relative;
+    flex-shrink: 0;
   }
   
   /* PAGE CONTENT */
@@ -32,6 +37,8 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    height: 100vh;
+    padding-bottom: 20px;
   }
   
   /* HEADER CONTAINER (For New Line + Logo) */
@@ -107,6 +114,9 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     margin-top: 20px; /* Space above the container */
+    margin-right: 20px;
+    padding-bottom: 30px;
+    
   }
   
   /* Horizontal line under header */
@@ -117,6 +127,7 @@
     color: #005bd2; /* Text color */
     font-size: 18px; /* Font size */
     font-weight: bold; /* Bold text */
+    margin-bottom: 20px ;
   }
   
   /* FORM STYLES */
@@ -142,4 +153,46 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     background-color: #F7F8FA;
+  }
+
+  /* INPUT ICON STYLE */
+.input-icon {
+    position: relative;
+  }
+  
+  .input-icon span {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  
+  /* CONTINUE BUTTON */
+  .continue-btn {
+    background-color: #005bd2; /* Button background color */
+    color: white; /* Button text color */
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    display: inline-block;
+    text-align: center;
+    width: 180px;
+    height: 50px;
+    display: block;
+    margin-left: auto; /* Move to the right*/
+    margin-bottom: 30px;
+    margin-top: 20px;
+    margin-right: 20px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .continue-btn:hover {
+    opacity: 0.9;
+    background-color: #0048a5;
+    transform: scale(1.05);
   }

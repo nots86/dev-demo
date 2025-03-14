@@ -9,6 +9,7 @@
     position: relative; /* Ensure the button moves with the sidebar */
     transition: width 0.3s ease-in-out;
     overflow: hidden;
+    flex-shrink: 0;
   }
 
   /* .sidebar.expand{
