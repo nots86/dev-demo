@@ -11,15 +11,14 @@ export default function LinesLayout({
   }>) {
     return (
         <main className="main-layout">
-            <div className="content-wrapper"></div>
             <div className="sidebar-right">
-                <Link href="/new-linw">
+                <Link href="/new-line" legacyBehavior>
                 <button className="new-line-btn">
                     <span style={{marginRight: "px"}}>+</span>
                     New Line</button>
                 </Link>
             </div>
-            <div className="content">{children}</div>
+            <div className="content-wrapper">{children}</div>
         </main>
     );
   }

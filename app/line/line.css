@@ -1,35 +1,90 @@
-.main-layout{
+/* MAIN LAYOUT */
+.main-layout {
     display: flex;
     height: 100vh;
+    width: 100vw;
     background-color: #f5f5f5;
-}
-.content-wrapper{
+  }
+  
+  .content-wrapper {
     display: flex;
     flex-grow: 1;
-}
-
-.sidebar-right{
+    background-color: yellow;
+  }
+  
+  /* SIDEBAR */
+  .sidebar-right {
     background-color: #001965;
     width: 220px;
     height: 100vh;
+    display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 10px;
     position: relative;
-}
-
-.content{
+  }
+  
+  /* PAGE CONTENT */
+  .content {
     flex-grow: 1;
-    padding: 20px;
-    background-color: #f5f5f5;
-}
-
-.new-line-btn{
+    padding: 10px 20px;
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  /* HEADER CONTAINER (For New Line + Logo) */
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: transparent;
+  }
+  
+  /* PAGE HEADER (Title) */
+  .page-header {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    width: 100%;
+    border-bottom: 2px solid #b3bbc7; /* Light gray line below */
+  }
+  
+  /* NEW LINE & LOGO CONTAINER */
+  .logo-right-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+    padding-right: 20px;
+  }
+  
+  .new-line-left-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 4px 8px;
+    border: 1px solid #b3bbc7;
+    border-radius: 5px;
+    background: transparent;
+  }
+  
+  /* LOGO PLACEMENT */
+  .logo-right-box {
+    margin-left: auto;
+  }
+  
+  /* BUTTON STYLES */
+  .new-line-btn {
     background: transparent;
     color: white;
     font-size: 16px;
     font-weight: 500;
-    width:90%;
+    width: 90%;
     max-width: 200px;
     padding: 12px 24px;
     display: flex;
@@ -39,10 +94,52 @@
     transition: background 0.3s ease, transform 0.2s ease;
     position: relative;
     left: 10px;
-    
-}
-
-.new-line-btn:hover{
-    background: #2E4281;
-    
-}
+  }
+  
+  .new-line-btn:hover {
+    background: #2e4281;
+  }
+  
+  /* FORM CONTAINER */
+  .container {
+    background: #fff; /* White background for container */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 20px; /* Space above the container */
+  }
+  
+  /* Horizontal line under header */
+  .container h2 {
+    border-bottom: 2px solid #b3bbc7; /* Light gray line */
+    /* background: #dcdee5; */
+    padding-bottom: 5px;
+    color: #005bd2; /* Text color */
+    font-size: 18px; /* Font size */
+    font-weight: bold; /* Bold text */
+  }
+  
+  /* FORM STYLES */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .subheader {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"], select {
+    width: 98%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #F7F8FA;
+  }
