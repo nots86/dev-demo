@@ -11,10 +11,10 @@
     overflow: hidden;
   }
 
-  .sidebar.expand{
-    width: 250px; /* Expand width */
+  /* .sidebar.expand{
+    width: 250px; 
   }
-  
+   */
   .sidebar-container {
     width: 100%;
     display: flex;
