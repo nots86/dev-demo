@@ -1,9 +1,28 @@
-"use client";
-
+"use client"
 import React, { useState, ChangeEvent } from "react";
 import "./line.css";
+import {db} from "@/app/db/db"
+import { new_line } from "@/app/db/schema";
+import "dotenv/config"
 
-export default function Lines() {
+export default async function Lines() {
+
+  /* // Insert manuelt in database just for testing
+  await db.insert(new_line).values({
+    id: 0,
+    country: "Denmark",
+    site:"Søborg",
+    area: "area",
+    processCell:"process cell",
+    hostName: "host name",
+    hardware:"hardware",
+    dataAccessAdGroup: "data access group",
+    localSystemManagerAdGroup: "local system"
+  })
+  const new_line = await db.query.new_line.findFirst()
+  console.log(new_line) */
+
+
   // Form state
   const [formData, setFormData] = useState({
     country: "",
@@ -38,6 +57,17 @@ export default function Lines() {
       });
       if (response.ok) {
         alert('Line information saved successfully.');
+        // Optionally reset the form or redirect
+        setFormData({
+          country: "",
+          site: "",
+          area: "",
+          processCell: "",
+          hostName: "",
+          hardware: "",
+          dataAccessAdGroup: "",
+          localSystemManagerAdGroup: "",
+      });
       } else {
         alert('Error saving line information.');
       }
