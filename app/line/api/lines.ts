@@ -1,3 +1,4 @@
+/* 'use client'
 import { NextApiRequest, NextApiResponse } from "next";
 import { db } from "@/app/db/db";
 import { new_line } from "@/app/db/schema";
@@ -31,4 +32,4 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         res.setHeader('Allow', ['POST']);
         res.status(405).end(`Method ${req.method} Not Allowed`);
     }
-}
+} */

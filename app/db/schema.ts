@@ -1,5 +1,4 @@
-
-import {pgTable, serial, varchar} from "drizzle-orm/pg-core"
+import {pgTable, serial, timestamp, varchar} from "drizzle-orm/pg-core"
 
 export const new_line = pgTable ('new_line', {
     id: serial('id').primaryKey(),
@@ -10,5 +9,6 @@ export const new_line = pgTable ('new_line', {
     hostName: varchar('hostName', {length:255}).notNull(),
     hardware: varchar('hardware', {length:255}).notNull(),
     dataAccessAdGroup: varchar('data_access_Ad_group', {length:255}).notNull(),
-    localSystemManagerAdGroup: varchar('local_system_manager_Ad_group', {length:255}).notNull()
+    localSystemManagerAdGroup: varchar('local_system_manager_Ad_group', {length:255}).notNull(),
+    
 });

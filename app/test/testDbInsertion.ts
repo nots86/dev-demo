@@ -1,5 +1,6 @@
 
 // Run the test, making sure inserting in db is working correct:
+// npx tsx app\test\testDbInsertion.ts
 // npx ts-node -r tsconfig-paths/register app/test/testDbInsertion.ts
 
 import { new_line } from '@/app/db/schema';
@@ -25,7 +26,7 @@ export const db = drizzle(client, {schema, logger: true}) // Passing client and 
 async function testInsertion() {
     const newLine = {
       country: "Denmark",
-      site: "Søborg",
+      site: "Søborg 999999",
       area: "area",
       processCell: "process cell",
       hostName: "host name",
